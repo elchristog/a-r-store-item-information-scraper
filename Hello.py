@@ -14,6 +14,7 @@
 
 import streamlit as st
 from streamlit.logger import get_logger
+import utils.crawler as cr
 
 LOGGER = get_logger(__name__)
 
@@ -35,7 +36,7 @@ def run():
     col1, col2 = st.columns(2)
     with col1:
       st.write("#### Start scraping")
-      st.button("Start scraping")
+      st.button("Scrape", on_click = cr.extract_data)
     with col2:
       st.write("#### Download data")
 

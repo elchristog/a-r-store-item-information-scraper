@@ -1,5 +1,7 @@
 import requests
 import pandas as pd
+import streamlit as st
+
 from bs4 import BeautifulSoup
 
 def extract_info(html: str) -> tuple:
@@ -50,7 +52,7 @@ def extract_info(html: str) -> tuple:
 
 
 
-
+@st.cache_data(ttl=21600, show_spinner=False)
 def extract_data():
     """
     Extracts data from the A+R Store API, processes and normalizes it, and exports the final DataFrame to a CSV file.
@@ -131,8 +133,11 @@ def extract_data():
     # Calculate the total number of pages
     total_pages = (total_products + limit_per_page - 1) // limit_per_page
 
-    print(f"Total parent products: {total_products}")
-    print(f"Total pages: {total_pages}")
+    st.write(f"Total parent products: {total_products}")
+    st.write(f"Total pages: {total_pages}")
+
+    # Save df as session state
+    st.session_state.final_dataframe = final_dataframe
 
     # Export the final DataFrame to a CSV file
-    final_dataframe.to_csv("aplusrstore_products_normalized.csv", index=False)
+    # final_dataframe.to_csv("aplusrstore_products_normalized.csv", index=False)
