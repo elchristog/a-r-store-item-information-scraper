@@ -32,6 +32,13 @@ def run():
     """
     )
 
+    col1, col2 = st.columns(2)
+    with col1:
+      st.write("#### Start scraping")
+      st.button("Start scraping")
+    with col2:
+      st.write("#### Download data")
+
 
 if __name__ == "__main__":
     run()
