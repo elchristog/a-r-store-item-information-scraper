@@ -1,7 +1,23 @@
-# Welcome to streamlit
+# A+R Store Product Information Scraper 🛋️
 
-This is the app you get when you run `streamlit hello`, extracted as its own app.
+## Overview
 
-Edit [Hello.py](./Hello.py) to customize this app to your heart's desire. ❤️
+This tool allows you to scrape product information from the A+R Store and provides general statistics about the collected data. The scraped information includes details about products, variants, and more.
 
-Check it out on [Streamlit Community Cloud](https://st-hello-app.streamlit.app/)
+Try here: https://arstoreitem-informationscraper.streamlit.app/
+
+## Installation
+
+To run the scraper, you need to have Python and Streamlit installed. You can install the required dependencies using the following commands:
+
+```bash
+pip install streamlit
+```
+## Usage
+
+1- Clone this repository: 
+```bash
+git clone https://github.com/elchristog/a-r-store-item-information-scraper
+cd your-repository
+```
+
