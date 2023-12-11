@@ -14,7 +14,7 @@
 
 import streamlit as st
 from streamlit.logger import get_logger
-import modules.crawler as cr
+import modules.scraper as scr
 
 LOGGER = get_logger(__name__)
 
@@ -37,7 +37,7 @@ def run():
     col1, col2 = st.columns(2)
     with col1:
       st.write("#### Start scraping")
-      st.button("Scrape", on_click = cr.extract_data)
+      st.button("Scrape", on_click = scr.extract_data)
     with col2:
       st.write("#### Download data")
       if 'final_dataframe' not in st.session_state:
