@@ -134,7 +134,7 @@ def extract_data():
     total_pages = (total_products + limit_per_page - 1) // limit_per_page
 
     st.toast(f"Total parent products: {total_products}")
-    st.toas(f"Total pages: {total_pages}")
+    st.toast(f"Total pages: {total_pages}")
 
     # Save df as session state
     st.session_state.final_dataframe = final_dataframe
