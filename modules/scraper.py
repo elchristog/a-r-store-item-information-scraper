@@ -136,12 +136,18 @@ def extract_data():
     # Calculate the total number of pages
     total_pages = (total_products + limit_per_page - 1) // limit_per_page
 
+    # Calculate completitude metrics
+    percentage_sku_non_null = (final_dataframe['variant_sku'].notnull().sum() / len(final_dataframe)) * 100
+    percentage_price_non_null = (final_dataframe['variant_price'].notnull().sum() / len(final_dataframe)) * 100
+    percentage_grams_non_null = (final_dataframe['variant_grams'].notnull().sum() / len(final_dataframe)) * 100
     
     # Saving metrics as session state
     st.session_state.total_pages = total_pages
     st.session_state.total_products = total_products
     st.session_state.total_variants = len(final_dataframe)
-
+    st.session_state.percentage_sku_non_null = percentage_sku_non_null
+    st.session_state.percentage_price_non_null = percentage_price_non_null
+    st.session_state.percentage_grams_non_null = percentage_grams_non_null
 
     # Save df as session state
     st.session_state.final_dataframe = final_dataframe.to_csv(index=False).encode("utf-8")

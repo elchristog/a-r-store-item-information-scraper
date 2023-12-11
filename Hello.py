@@ -58,6 +58,9 @@ def run():
       col1.metric(label="Total pages scraped", value = st.session_state.total_pages)
       col2.metric(label="Total products scraped", value = st.session_state.total_products)
       col3.metric(label="Total variants scraped", value = st.session_state.total_variants)
+      col1.metric(label="% Variants with SKU info", value = st.session_state.percentage_sku_non_null)
+      col2.metric(label="% Variants with price info", value = st.session_state.percentage_price_non_null)
+      col3.metric(label="% Variants with weight info", value = st.session_state.percentage_grams_non_null)
 
 
 if __name__ == "__main__":
