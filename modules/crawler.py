@@ -137,5 +137,6 @@ def extract_data():
     st.toast(f"Total pages: {total_pages}")
 
     # Save df as session state
-    st.session_state.final_dataframe = final_dataframe
+    st.session_state.final_dataframe = final_dataframe.to_csv(index=False).encode("utf-8")
 
+    
