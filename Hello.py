@@ -42,6 +42,7 @@ def run():
       if 'final_dataframe' not in st.session_state:
         st.info("Waiting for scraped data", icon = "😶‍🌫️")
       else:
+        st.table(st.session_state.final_dataframe.head())
         st.download_button(
             label="Download data as CSV",
             data=st.session_state.final_dataframe,
