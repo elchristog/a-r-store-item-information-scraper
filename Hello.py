@@ -39,6 +39,8 @@ def run():
       st.button("Scrape", on_click = cr.extract_data)
     with col2:
       st.write("#### Download data")
+      if 'final_dataframe' not in st.session_state:
+        st.info("Waiting for scraped data", icon = "😶‍🌫️")
 
 
 if __name__ == "__main__":
