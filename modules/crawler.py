@@ -125,7 +125,7 @@ def extract_data():
             raise Exception(f"Error: Unable to fetch data. Status code: {response.status_code}")
 
     # Concatenate all DataFrames into one
-    final_dataframe = pd.concat(all_dataframes, ignore_index=True)
+    final_dataframe = pd.DataFrame(pd.concat(all_dataframes, ignore_index=True))
 
     # Specify the limit per page
     limit_per_page = 250
