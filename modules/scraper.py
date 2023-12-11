@@ -75,6 +75,9 @@ def extract_data():
     all_dataframes = []
 
     while True:
+        # Showing page info
+        st.toast(f"Scrapping page: {current_page}")
+
         # Make an HTTP GET request
         response = requests.get(url_template.format(current_page))
 
