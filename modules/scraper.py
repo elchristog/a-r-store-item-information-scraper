@@ -52,7 +52,7 @@ def extract_info(html: str) -> tuple:
 
 
 
-@st.cache_data(ttl=21600, show_spinner=False)
+
 def extract_data():
     """
     Extracts data from the A+R Store API, processes and normalizes it, and exports the final DataFrame to a CSV file.
