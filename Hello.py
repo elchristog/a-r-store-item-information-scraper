@@ -32,6 +32,7 @@ def run():
         To utilize this tool, kindly click the "Scrape" button. Please be patient for a few seconds, and subsequently, you will be able to download the CSV file containing the scraped data. Additionally, the tool will include general statistics regarding the collected information about the products in the A+R Store.
     """
     )
+    st.write("---")
 
     col1, col2 = st.columns(2)
     with col1:
