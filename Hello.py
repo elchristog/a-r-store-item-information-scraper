@@ -54,7 +54,11 @@ def run():
     if 'final_dataframe' not in st.session_state:
       st.info("Waiting for scraped data", icon = "😶‍🌫️")
     else:
-      st.write(st.session_state.final_dataframe.head())
+      col1, col2, col3 = st.columns(3)
+      col1.metric(label="Total pages scraped", value = st.session_state.total_pages, delta= 0)
+      col2.metric(label="Total products scraped", value = st.session_state.total_products, delta= 0)
+      col3.metric(label="Total variants scraped", value = st.session_state.total_variants, delta= 0)
+
 
 if __name__ == "__main__":
     run()

@@ -136,8 +136,12 @@ def extract_data():
     # Calculate the total number of pages
     total_pages = (total_products + limit_per_page - 1) // limit_per_page
 
-    st.toast(f"Total parent products: {total_products}")
-    st.toast(f"Total pages: {total_pages}")
+    
+    # Saving metrics as session state
+    st.session_state.total_pages = total_pages
+    st.session_state.total_products = total_products
+    st.session_state.total_variants = len(final_dataframe)
+
 
     # Save df as session state
     st.session_state.final_dataframe = final_dataframe.to_csv(index=False).encode("utf-8")
