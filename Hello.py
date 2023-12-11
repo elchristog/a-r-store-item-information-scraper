@@ -55,9 +55,9 @@ def run():
       st.info("Waiting for scraped data", icon = "😶‍🌫️")
     else:
       col1, col2, col3 = st.columns(3)
-      col1.metric(label="Total pages scraped", value = st.session_state.total_pages, delta= 0)
-      col2.metric(label="Total products scraped", value = st.session_state.total_products, delta= 0)
-      col3.metric(label="Total variants scraped", value = st.session_state.total_variants, delta= 0)
+      col1.metric(label="Total pages scraped", value = st.session_state.total_pages)
+      col2.metric(label="Total products scraped", value = st.session_state.total_products)
+      col3.metric(label="Total variants scraped", value = st.session_state.total_variants)
 
 
 if __name__ == "__main__":
