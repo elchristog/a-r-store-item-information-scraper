@@ -42,11 +42,12 @@ def run():
       if 'final_dataframe' not in st.session_state:
         st.info("Waiting for scraped data", icon = "😶‍🌫️")
       else:
-        st.download_button(
-            label="Download data as CSV",
-            data=st.session_state.final_dataframe,
-            file_name='aplusrstore_products.csv'
-        )
+        pass
+        # st.download_button(
+        #     label="Download data as CSV",
+        #     data=st.session_state.final_dataframe,
+        #     file_name='aplusrstore_products.csv'
+        # )
 
 
 if __name__ == "__main__":

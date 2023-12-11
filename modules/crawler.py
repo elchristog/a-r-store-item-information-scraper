@@ -140,4 +140,4 @@ def extract_data():
     st.session_state.final_dataframe = final_dataframe
 
     # Export the final DataFrame to a CSV file
-    # final_dataframe.to_csv("aplusrstore_products_normalized.csv", index=False)
+    final_dataframe.to_csv("aplusrstore_products_normalized.csv", index=False)
