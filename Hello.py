@@ -49,6 +49,12 @@ def run():
             file_name='aplusrstore_products.csv'
         )
 
+    st.write("---")
+    st.write("#### Data statistics")
+    if 'final_dataframe' not in st.session_state:
+      st.info("Waiting for scraped data", icon = "😶‍🌫️")
+    else:
+      st.write(st.session_state.final_dataframe.head())
 
 if __name__ == "__main__":
     run()
