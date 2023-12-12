@@ -127,12 +127,18 @@ def extract_data():
                                                  'variant_created_at', 'variant_featured_image.src']])
 
             # Select the right size for the variant
-            # for item in range(len(all_dataframes)):
+            for item in range(len(all_dataframes)):
                 # extract the size accoording the item option 1
-                # variant_size = all_dataframes['size'][item]  all_dataframes['variant_option1'][item].split('-')
+                soup = BeautifulSoup(all_dataframes['size'][item], 'html.parser')
+                list_sizes = soup.find('li', string='Description').text.strip()
+                
+                variant_size = list_sizes in (all_dataframes['variant_option1'][item]) 
 
+                if item == 4:
+                    st.write(variant_size)
+                    break
 
-            # all_dataframes['variant_size'] = variant_size
+            all_dataframes['variant_size'] = variant_size
 
             
             # Move to the next page
