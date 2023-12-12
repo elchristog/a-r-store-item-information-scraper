@@ -86,9 +86,8 @@ def extract_data():
             # Parse the JSON data
             json_data = response.json()
 
-
             # showing the json file
-            json_data['products'][0]
+            st.write(json_data['products'][0])
 
             # Get the total number of products on the current page
             products_on_page = len(json_data)
