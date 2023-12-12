@@ -87,7 +87,8 @@ def extract_data():
             json_data = response.json()
 
             # showing the json file
-            st.write(json_data['products'][0])
+            st.write(json_data['products'][2])
+            st.write(json_data['products'][6])
 
             # Get the total number of products on the current page
             products_on_page = len(json_data)
@@ -120,11 +121,20 @@ def extract_data():
             # Append the DataFrame to the list
             all_dataframes.append(normalized_df[['id', 'title', 'handle', 'published_at',
                                                  'created_at', 'vendor', 'product_type', 'tags', 'description', 'size',
-                                                 'material', 'first_product_image', 'variant_id', 'variant_title',
+                                                 'material', 'first_product_image', 'variant_id', 'variant_title', 'variant_option1',
                                                  'variant_sku', 'variant_requires_shipping', 'variant_taxable',
                                                  'variant_available', 'variant_price', 'variant_grams',
                                                  'variant_created_at', 'variant_featured_image.src']])
 
+            # Select the right size for the variant
+            # for item in range(len(all_dataframes)):
+                # extract the size accoording the item option 1
+                # variant_size = all_dataframes['size'][item]  all_dataframes['variant_option1'][item].split('-')
+
+
+            # all_dataframes['variant_size'] = variant_size
+
+            
             # Move to the next page
             current_page += 1
             break
