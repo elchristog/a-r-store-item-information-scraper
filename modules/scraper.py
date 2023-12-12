@@ -86,8 +86,12 @@ def extract_data():
             # Parse the JSON data
             json_data = response.json()
 
+
+            # showing the json file
+            json_data['products'][0]
+
             # Get the total number of products on the current page
-            products_on_page = len(json_data["products"])
+            products_on_page = len(json_data)
             total_products += products_on_page
 
             # Check if there are more pages
@@ -124,6 +128,7 @@ def extract_data():
 
             # Move to the next page
             current_page += 1
+            break
         else:
             raise Exception(f"Error: Unable to fetch data. Status code: {response.status_code}")
 
