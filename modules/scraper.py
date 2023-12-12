@@ -86,10 +86,6 @@ def extract_data():
             # Parse the JSON data
             json_data = response.json()
 
-            # showing the json file
-            st.write(json_data['products'][2])
-            st.write(json_data['products'][6])
-
             # Get the total number of products on the current page
             products_on_page = len(json_data)
             total_products += products_on_page
@@ -126,21 +122,6 @@ def extract_data():
                                                  'variant_available', 'variant_price', 'variant_grams',
                                                  'variant_created_at', 'variant_featured_image.src']])
 
-            # Select the right size for the variant
-            for item in range(len(all_dataframes)):
-                # extract the size accoording the item option 1
-                soup = BeautifulSoup(all_dataframes['size'][item], 'html.parser')
-                list_sizes = soup.find('li', string='Description').text.strip()
-                
-                variant_size = list_sizes in (all_dataframes['variant_option1'][item]) 
-
-                if item == 4:
-                    st.write(variant_size)
-                    break
-
-            all_dataframes['variant_size'] = variant_size
-
-            
             # Move to the next page
             current_page += 1
             break
